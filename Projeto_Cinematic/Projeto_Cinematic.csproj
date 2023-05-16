@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastro_ingresso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro_ingresso.Designer.cs">
+      <DependentUpon>cadastro_ingresso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Projeto_Cinematic
 {
-    public partial class Form1 : Form
+    public partial class cadastro_ingresso : Form
     {
-        public Form1()
+        public cadastro_ingresso()
         {
             InitializeComponent();
-        }
-
-        private void ingressoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cadastro_ingresso cIngresso = new cadastro_ingresso();
-            cIngresso.MdiParent = this;
-            cIngresso.Show();
         }
     }
 }
