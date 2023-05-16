@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto_Cinematic", "Projeto_Cinematic\Projeto_Cinematic.csproj", "{6306B6F3-DA8D-4702-88FA-2A8FFFD6E814}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6306B6F3-DA8D-4702-88FA-2A8FFFD6E814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6306B6F3-DA8D-4702-88FA-2A8FFFD6E814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6306B6F3-DA8D-4702-88FA-2A8FFFD6E814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6306B6F3-DA8D-4702-88FA-2A8FFFD6E814}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3193C2F4-1058-4098-8DFD-99BF91705A45}
+	EndGlobalSection
+EndGlobal
