@@ -59,55 +59,5 @@ namespace Projeto_Cinematic.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap big_poster_filme_capita_marvel_tamanho_90x60_cm_presente_geek {
-            get {
-                object obj = ResourceManager.GetObject("big-poster-filme-capita-marvel-tamanho-90x60-cm-presente-geek", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Captura_de_tela_2023_05_16_114039 {
-            get {
-                object obj = ResourceManager.GetObject("Captura de tela 2023-05-16 114039", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Captura_de_tela_2023_05_16_1140391 {
-            get {
-                object obj = ResourceManager.GetObject("Captura de tela 2023-05-16 1140391", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Captura_de_tela_2023_05_16_114310 {
-            get {
-                object obj = ResourceManager.GetObject("Captura de tela 2023-05-16 114310", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap imagem46_8 {
-            get {
-                object obj = ResourceManager.GetObject("imagem46-8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

@@ -11,29 +11,14 @@ using System.Windows.Forms;
 
 namespace Projeto_Cinematic
 {
-    public partial class cadastro_funcionario : Form
+    public partial class Login : Form
     {
-        public cadastro_funcionario()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
             //criando o objeto de conexão com banco de dados
             SqlConnection connection = new SqlConnection();
@@ -42,24 +27,32 @@ namespace Projeto_Cinematic
             //criando o objeto de comando de SQL para enviar instruções para o banco de dados
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection; //ligando o comando a conexão que configurada acima
-            cmd.CommandText = "piFuncionario_Di";
+            cmd.CommandText = "psLogin_Di";
             cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
 
             //vincular os campos do formulários aos parâmetros do procedimento
-            cmd.Parameters.AddWithValue("nome", txtNome.Text);
-            cmd.Parameters.AddWithValue("dtNascimento", txtdtNascimento.Text);
-            cmd.Parameters.AddWithValue("cpf", txtCPF.Text);
-            cmd.Parameters.AddWithValue("telefone", txtTelefone.Text);
-            cmd.Parameters.AddWithValue("email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("cargo", txtCargo.Text);
             cmd.Parameters.AddWithValue("usuario", txtUsuario.Text);
             cmd.Parameters.AddWithValue("senha", txtSenha.Text);
-         
+   
             connection.Open();
-            cmd.ExecuteNonQuery(); //executar para comandos que não possuem retorno de dados (INSERT, UPDATE e DELETE)
-            connection.Close();
+            SqlDataReader reader = cmd.ExecuteReader(); //executando o comando de busca no SQL e armazenando o resultado da busca em um leitor (matriz)
 
-            MessageBox.Show("Funcionário cadastrado com sucesso!");
+            if (reader.HasRows)
+            {
+                reader.Read();
+                
+                txtUsuario.Text = reader.GetString(7);
+                txtSenha.Text = reader.GetString(8);
+
+                Form1 login = new Form1();
+                login.Show();
+            }
+            else
+            {
+                MessageBox.Show("Funcionário não encontrado!");
+            }
+
+            connection.Close();
         }
     }
 }

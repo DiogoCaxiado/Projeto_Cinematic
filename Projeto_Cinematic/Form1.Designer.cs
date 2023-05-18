@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.destaqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inicialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filmesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingressoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
@@ -43,10 +42,9 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Yellow;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.destaqueToolStripMenuItem,
+            this.inicialToolStripMenuItem,
             this.filmesToolStripMenuItem,
             this.ingressoToolStripMenuItem,
-            this.sairToolStripMenuItem,
             this.funcionarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -55,12 +53,12 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // destaqueToolStripMenuItem
+            // inicialToolStripMenuItem
             // 
-            this.destaqueToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.destaqueToolStripMenuItem.Name = "destaqueToolStripMenuItem";
-            this.destaqueToolStripMenuItem.Size = new System.Drawing.Size(87, 25);
-            this.destaqueToolStripMenuItem.Text = "Destaque";
+            this.inicialToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inicialToolStripMenuItem.Name = "inicialToolStripMenuItem";
+            this.inicialToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
+            this.inicialToolStripMenuItem.Text = "Inicial";
             // 
             // filmesToolStripMenuItem
             // 
@@ -75,14 +73,6 @@
             this.ingressoToolStripMenuItem.Name = "ingressoToolStripMenuItem";
             this.ingressoToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.ingressoToolStripMenuItem.Text = "Ingresso";
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(49, 25);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
@@ -102,7 +92,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-           // this.BackgroundImage = global::Projeto_Cinematic.Properties.Resources.Captura_de_tela_2023_05_16_091351;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(760, 450);
             this.Controls.Add(this.menuStrip1);
@@ -123,11 +112,10 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem destaqueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inicialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingressoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
