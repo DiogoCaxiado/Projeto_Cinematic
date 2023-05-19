@@ -24,9 +24,9 @@ namespace Projeto_Cinematic
 
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cadastro_funcionario cf = new cadastro_funcionario();
-            cf.MdiParent = this; //a tela filha pertence a tela pai, que é a tela atual
-            cf.Show();
+            Login l = new Login();
+            l.MdiParent = this; //a tela filha pertence a tela pai, que é a tela atual
+            l.Show();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

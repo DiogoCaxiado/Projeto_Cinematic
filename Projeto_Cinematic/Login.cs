@@ -31,21 +31,22 @@ namespace Projeto_Cinematic
             cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
 
             //vincular os campos do formulários aos parâmetros do procedimento
-            cmd.Parameters.AddWithValue("usuario", txtUsuario.Text);
             cmd.Parameters.AddWithValue("senha", txtSenha.Text);
    
             connection.Open();
             SqlDataReader reader = cmd.ExecuteReader(); //executando o comando de busca no SQL e armazenando o resultado da busca em um leitor (matriz)
-
+           
             if (reader.HasRows)
             {
                 reader.Read();
                 
-                txtUsuario.Text = reader.GetString(7);
+                txtUsuario.Text = reader.GetInt32(0).ToString();
                 txtSenha.Text = reader.GetString(8);
 
                 Form1 login = new Form1();
+                login.MdiParent = this.MdiParent;
                 login.Show();
+
             }
             else
             {
@@ -53,6 +54,16 @@ namespace Projeto_Cinematic
             }
 
             connection.Close();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
