@@ -38,5 +38,12 @@ namespace Projeto_Cinematic
         {
             Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.Black;
         }
+
+        private void ingressoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             cadastro_ingresso ci = new cadastro_ingresso();
+            ci.MdiParent = this; //a tela filha pertence a tela pai, que é a tela atual
+            ci.Show();
+        }
     }
 }

@@ -33,7 +33,6 @@
             this.destaqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filmesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingressoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
@@ -46,7 +45,6 @@
             this.destaqueToolStripMenuItem,
             this.filmesToolStripMenuItem,
             this.ingressoToolStripMenuItem,
-            this.sairToolStripMenuItem,
             this.funcionarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -75,14 +73,7 @@
             this.ingressoToolStripMenuItem.Name = "ingressoToolStripMenuItem";
             this.ingressoToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.ingressoToolStripMenuItem.Text = "Ingresso";
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(49, 25);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            this.ingressoToolStripMenuItem.Click += new System.EventHandler(this.ingressoToolStripMenuItem_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
@@ -102,7 +93,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-           // this.BackgroundImage = global::Projeto_Cinematic.Properties.Resources.Captura_de_tela_2023_05_16_091351;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(760, 450);
             this.Controls.Add(this.menuStrip1);
@@ -127,7 +117,6 @@
         private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingressoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

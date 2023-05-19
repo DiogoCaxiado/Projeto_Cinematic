@@ -240,6 +240,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "Excluir";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -249,6 +250,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Atualizar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -302,6 +304,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "cadastro_funcionario";
             this.Text = "cadastro_funcionario";
+            this.Load += new System.EventHandler(this.cadastro_funcionario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
