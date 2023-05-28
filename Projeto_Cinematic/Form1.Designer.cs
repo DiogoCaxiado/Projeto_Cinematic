@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.destaqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filmesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingressoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAcesso = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuIngresso = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFuncionario = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFilmes = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSecao = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCadastrarFilmes = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,70 +47,98 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Yellow;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.destaqueToolStripMenuItem,
-            this.filmesToolStripMenuItem,
-            this.ingressoToolStripMenuItem,
-            this.sairToolStripMenuItem,
-            this.funcionarioToolStripMenuItem});
+            this.menuAcesso,
+            this.menuIngresso,
+            this.menuFuncionario,
+            this.menuFilmes,
+            this.menuSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(760, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // destaqueToolStripMenuItem
+            // menuAcesso
             // 
-            this.destaqueToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.destaqueToolStripMenuItem.Name = "destaqueToolStripMenuItem";
-            this.destaqueToolStripMenuItem.Size = new System.Drawing.Size(87, 25);
-            this.destaqueToolStripMenuItem.Text = "Destaque";
+            this.menuAcesso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAcesso.Name = "menuAcesso";
+            this.menuAcesso.Size = new System.Drawing.Size(70, 25);
+            this.menuAcesso.Text = "Acesso";
+            this.menuAcesso.Click += new System.EventHandler(this.menuAcesso_Click);
             // 
-            // filmesToolStripMenuItem
+            // menuIngresso
             // 
-            this.filmesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
-            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(67, 25);
-            this.filmesToolStripMenuItem.Text = "Filmes";
+            this.menuIngresso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuIngresso.Name = "menuIngresso";
+            this.menuIngresso.Size = new System.Drawing.Size(81, 25);
+            this.menuIngresso.Text = "Ingresso";
+            this.menuIngresso.Visible = false;
+            this.menuIngresso.Click += new System.EventHandler(this.menuIngresso_Click);
             // 
-            // ingressoToolStripMenuItem
+            // menuFuncionario
             // 
-            this.ingressoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ingressoToolStripMenuItem.Name = "ingressoToolStripMenuItem";
-            this.ingressoToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
-            this.ingressoToolStripMenuItem.Text = "Ingresso";
+            this.menuFuncionario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuFuncionario.Name = "menuFuncionario";
+            this.menuFuncionario.Size = new System.Drawing.Size(104, 25);
+            this.menuFuncionario.Text = "Funcionário";
+            this.menuFuncionario.Visible = false;
+            this.menuFuncionario.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
-            // sairToolStripMenuItem
+            // menuFilmes
             // 
-            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(49, 25);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            this.menuFilmes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuSecao,
+            this.menuCadastrarFilmes});
+            this.menuFilmes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuFilmes.Name = "menuFilmes";
+            this.menuFilmes.Size = new System.Drawing.Size(67, 25);
+            this.menuFilmes.Text = "Filmes";
+            this.menuFilmes.Visible = false;
             // 
-            // funcionarioToolStripMenuItem
+            // menuSecao
             // 
-            this.funcionarioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(104, 25);
-            this.funcionarioToolStripMenuItem.Text = "Funcionário";
-            this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
+            this.menuSecao.Name = "menuSecao";
+            this.menuSecao.Size = new System.Drawing.Size(206, 26);
+            this.menuSecao.Text = "Sessão dos Filmes";
+            this.menuSecao.Click += new System.EventHandler(this.menuSecao_Click);
+            // 
+            // menuCadastrarFilmes
+            // 
+            this.menuCadastrarFilmes.Name = "menuCadastrarFilmes";
+            this.menuCadastrarFilmes.Size = new System.Drawing.Size(206, 26);
+            this.menuCadastrarFilmes.Text = "Filmes";
+            this.menuCadastrarFilmes.Click += new System.EventHandler(this.menuCadastrarFilmes_Click);
+            // 
+            // menuSair
+            // 
+            this.menuSair.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.menuSair.Name = "menuSair";
+            this.menuSair.Size = new System.Drawing.Size(49, 25);
+            this.menuSair.Text = "Sair";
+            this.menuSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-           // this.BackgroundImage = global::Projeto_Cinematic.Properties.Resources.Captura_de_tela_2023_05_16_091351;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(760, 450);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -123,12 +155,15 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem destaqueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ingressoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuSair;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem menuSecao;
+        private System.Windows.Forms.ToolStripMenuItem menuCadastrarFilmes;
+        public System.Windows.Forms.ToolStripMenuItem menuAcesso;
+        public System.Windows.Forms.ToolStripMenuItem menuFilmes;
+        public System.Windows.Forms.ToolStripMenuItem menuIngresso;
+        public System.Windows.Forms.ToolStripMenuItem menuFuncionario;
     }
 }
 
