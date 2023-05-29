@@ -19,13 +19,14 @@ namespace Projeto_Cinematic
         }
 
         int idSessao;
+        string escolha;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             {
                 Random random = new Random();
                 int valorAleatorio = random.Next(1, 1);
-                label1.Text = "Salas: " + valorAleatorio.ToString();
+                label1.Text = "Salas: " + valorAleatorio;
             }
 
 
@@ -36,6 +37,9 @@ namespace Projeto_Cinematic
             else
             {
                 timer1.Stop();
+
+                MessageBox.Show("Sessão cadastrada com êxito!\n Essa sessão estará vinculada ao filme: " + boxFilmes.FindString(escolha));
+                this.Close();
 
             }
         }
@@ -120,10 +124,12 @@ namespace Projeto_Cinematic
                 cmd.Parameters.AddWithValue("nomeFilme", boxFilmes.Text);
 
                 connection.Open();
-
+                    if (boxFilmes.SelectedIndex != -1)
+                {
+                    escolha = boxFilmes.SelectedItem.ToString();
+                }
                 SqlDataReader reader = cmd.ExecuteReader();
-                    reader.Read();
-                    idSessao = reader.GetInt32(0);
+                   
                 connection.Close();
             }
         }
