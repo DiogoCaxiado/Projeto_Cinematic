@@ -1,1 +1,6 @@
-# Projeto_Cinematic
+# Projeto_Cinematic![MicrosoftTeams-image (7)](https://github.com/DiogoCaxiado/Projeto_Cinematic/assets/133234606/6c172252-8e76-44df-9016-bcd5b3ad99a6)
+![MicrosoftTeams-image (8)](https://github.com/DiogoCaxiado/Projeto_Cinematic/assets/133234606/729afb08-9ad6-4aad-9df0-52f70a73f64b)
+![MicrosoftTeams-image (9)](https://github.com/DiogoCaxiado/Projeto_Cinematic/assets/133234606/1cc9e5d6-024c-4b88-9cb4-5f783b507e7d)
+![MicrosoftTeams-image (10)](https://github.com/DiogoCaxiado/Projeto_Cinematic/assets/133234606/0ca3ba84-1268-4da0-8b8d-a24adb8aaed3)
+![MicrosoftTeams-image (11)](https://github.com/DiogoCaxiado/Projeto_Cinematic/assets/133234606/0cb0e67e-9175-4845-a6fe-6a046ce7a669)
+![MicrosoftTeams-image (12)](https://github.com/DiogoCaxiado/Projeto_Cinematic/assets/133234606/86468ef5-76a2-48ef-b07d-d7a2d7e86ffd)
