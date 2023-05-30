@@ -334,6 +334,7 @@
             this.boxNome.Name = "boxNome";
             this.boxNome.Size = new System.Drawing.Size(121, 21);
             this.boxNome.TabIndex = 29;
+            this.boxNome.SelectedIndexChanged += new System.EventHandler(this.boxNome_SelectedIndexChanged);
             // 
             // Filmes
             // 

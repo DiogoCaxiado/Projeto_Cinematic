@@ -146,6 +146,7 @@
             // 
             // txtValor
             // 
+            this.txtValor.Enabled = false;
             this.txtValor.Location = new System.Drawing.Point(373, 27);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(118, 20);
@@ -154,13 +155,13 @@
             // 
             // boxSala
             // 
+            this.boxSala.Enabled = false;
             this.boxSala.FormattingEnabled = true;
             this.boxSala.ItemHeight = 14;
             this.boxSala.Location = new System.Drawing.Point(373, 71);
             this.boxSala.Name = "boxSala";
             this.boxSala.Size = new System.Drawing.Size(118, 22);
             this.boxSala.TabIndex = 28;
-            this.boxSala.Visible = false;
             this.boxSala.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // boxFilme
@@ -170,6 +171,7 @@
             this.boxFilme.Name = "boxFilme";
             this.boxFilme.Size = new System.Drawing.Size(127, 22);
             this.boxFilme.TabIndex = 25;
+            this.boxFilme.SelectedIndexChanged += new System.EventHandler(this.boxFilme_SelectedIndexChanged);
             // 
             // label4
             // 

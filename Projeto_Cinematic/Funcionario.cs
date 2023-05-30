@@ -21,70 +21,83 @@ namespace Projeto_Cinematic
         int idFuncionario;
 
         private void button1_Click(object sender, EventArgs e)
-
         {
-            timer1.Start();
-
+            if (txtNome.TextLength != 0 && txtTelefone.TextLength != 0 && txtEmail.TextLength != 0 && txtSenha.TextLength != 0 && txtdtNascimento.TextLength != 0 && txtCargo.TextLength != 0 && txtCargo.TextLength != 0)
             {
-                //criando o objeto de conexão com banco de dados
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
+              timer1.Start();
+                {
+                    //criando o objeto de conexão com banco de dados
+                    SqlConnection connection = new SqlConnection();
+                    connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
 
-                //criando o objeto de comando de SQL para enviar instruções para o banco de dados
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection; //ligando o comando a conexão que configurada acima
-                cmd.CommandText = "piFuncionario_Di";
-                cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
+                    //criando o objeto de comando de SQL para enviar instruções para o banco de dados
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection; //ligando o comando a conexão que configurada acima
+                    cmd.CommandText = "piFuncionario_Di";
+                    cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
 
-                //vincular os campos do formulários aos parâmetros do procedimento
-                cmd.Parameters.AddWithValue("nome", txtNome.Text);
-                cmd.Parameters.AddWithValue("dtNascimento", Convert.ToDateTime(txtdtNascimento.Text));
-                cmd.Parameters.AddWithValue("cpf", txtCPF.Text);
-                cmd.Parameters.AddWithValue("telefone", txtTelefone.Text);
-                cmd.Parameters.AddWithValue("email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("cargo", txtCargo.Text);
-                cmd.Parameters.AddWithValue("senha", txtSenha.Text);
+                    //vincular os campos do formulários aos parâmetros do procedimento
+                    cmd.Parameters.AddWithValue("nome", txtNome.Text);
+                    cmd.Parameters.AddWithValue("dtNascimento", Convert.ToDateTime(txtdtNascimento.Text));
+                    cmd.Parameters.AddWithValue("cpf", txtCPF.Text);
+                    cmd.Parameters.AddWithValue("telefone", txtTelefone.Text);
+                    cmd.Parameters.AddWithValue("email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("cargo", txtCargo.Text);
+                    cmd.Parameters.AddWithValue("senha", txtSenha.Text);
 
-                connection.Open();
+                    connection.Open();
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();
-                idFuncionario = reader.GetInt32(0);
-                connection.Close();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    idFuncionario = reader.GetInt32(0);
+                    connection.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Verifique os campos preenchidos.");
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Deseja realmente atualizar?", "Aviso", MessageBoxButtons.YesNo);
-
-            if (dialog == DialogResult.Yes)
+            if (txtNome.TextLength != 0 && txtTelefone.TextLength != 0 && txtEmail.TextLength != 0 && txtSenha.TextLength != 0 && txtdtNascimento.TextLength != 0 && txtCargo.TextLength != 0 && txtCargo.TextLength != 0)
             {
-                //criando o objeto de conexão com banco de dados
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
 
-                //criando o objeto de comando de SQL para enviar instruções para o banco de dados
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection; //ligando o comando a conexão que configurada acima
-                cmd.CommandText = "puFuncionario_Di";
-                cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
-                cmd.Parameters.AddWithValue("idFuncionario", idFuncionario);
+                DialogResult dialog = MessageBox.Show("Deseja realmente atualizar?", "Aviso", MessageBoxButtons.YesNo);
 
-                //vincular os campos do formulários aos parâmetros do procedimento
-                cmd.Parameters.AddWithValue("nome", txtNome.Text);
-                cmd.Parameters.AddWithValue("dtNascimento", Convert.ToDateTime(txtdtNascimento.Text));
-                cmd.Parameters.AddWithValue("cpf", txtCPF.Text);
-                cmd.Parameters.AddWithValue("cargo", txtCargo.Text);
-                cmd.Parameters.AddWithValue("telefone", txtTelefone.Text);
-                cmd.Parameters.AddWithValue("email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("senha", txtSenha.Text);
+                if (dialog == DialogResult.Yes)
+                {
+                    //criando o objeto de conexão com banco de dados
+                    SqlConnection connection = new SqlConnection();
+                    connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
 
-                connection.Open();
-                cmd.ExecuteNonQuery(); //executar para comandos que não possuem retorno de dados (INSERT, UPDATE e DELETE)
-                connection.Close();
+                    //criando o objeto de comando de SQL para enviar instruções para o banco de dados
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection; //ligando o comando a conexão que configurada acima
+                    cmd.CommandText = "puFuncionario_Di";
+                    cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
+                    cmd.Parameters.AddWithValue("idFuncionario", idFuncionario);
 
-                MessageBox.Show("Funcionário atualizado com sucesso!");
+                    //vincular os campos do formulários aos parâmetros do procedimento
+                    cmd.Parameters.AddWithValue("nome", txtNome.Text);
+                    cmd.Parameters.AddWithValue("dtNascimento", Convert.ToDateTime(txtdtNascimento.Text));
+                    cmd.Parameters.AddWithValue("cpf", txtCPF.Text);
+                    cmd.Parameters.AddWithValue("cargo", txtCargo.Text);
+                    cmd.Parameters.AddWithValue("telefone", txtTelefone.Text);
+                    cmd.Parameters.AddWithValue("email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("senha", txtSenha.Text);
+
+                    connection.Open();
+                    cmd.ExecuteNonQuery(); //executar para comandos que não possuem retorno de dados (INSERT, UPDATE e DELETE)
+                    connection.Close();
+
+                    MessageBox.Show("Funcionário atualizado com sucesso!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Verifique os campos preenchidos.");
             }
         }
 
@@ -193,28 +206,32 @@ namespace Projeto_Cinematic
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Deseja realmente excluir?", "Aviso", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if (txtNome.TextLength != 0 && txtTelefone.TextLength != 0 && txtEmail.TextLength != 0 && txtSenha.TextLength != 0 && txtdtNascimento.TextLength != 0 && txtCargo.TextLength != 0 && txtCargo.TextLength != 0)
             {
-                //criando o objeto de conexão com banco de dados
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
 
-                //criando o objeto de comando de SQL para enviar instruções para o banco de dados
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection; //ligando o comando a conexão que configurada acima
-                cmd.CommandText = "pdFuncionario_Di";
-                cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
+                DialogResult result = MessageBox.Show("Deseja realmente excluir?", "Aviso", MessageBoxButtons.YesNo);
 
-                //vincular os campos do formulários aos parâmetros do procedimento
-                cmd.Parameters.AddWithValue("cpf", txtCPF.Text);
+                if (result == DialogResult.Yes)
+                {
+                    //criando o objeto de conexão com banco de dados
+                    SqlConnection connection = new SqlConnection();
+                    connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
 
-                connection.Open();
-                cmd.ExecuteNonQuery(); //executar para comandos que não possuem retorno de dados (INSERT, UPDATE e DELETE)
-                connection.Close();
+                    //criando o objeto de comando de SQL para enviar instruções para o banco de dados
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection; //ligando o comando a conexão que configurada acima
+                    cmd.CommandText = "pdFuncionario_Di";
+                    cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
 
-                MessageBox.Show("Funcionário excluído com sucesso.");
+                    //vincular os campos do formulários aos parâmetros do procedimento
+                    cmd.Parameters.AddWithValue("cpf", txtCPF.Text);
+
+                    connection.Open();
+                    cmd.ExecuteNonQuery(); //executar para comandos que não possuem retorno de dados (INSERT, UPDATE e DELETE)
+                    connection.Close();
+
+                    MessageBox.Show("Funcionário excluído com sucesso.");
+                }
             }
         }
     }

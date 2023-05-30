@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCadastrarSecao = new System.Windows.Forms.Button();
-            this.btnFilmes = new System.Windows.Forms.Button();
             this.boxFilmes = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -129,23 +128,13 @@
             // 
             // btnCadastrarSecao
             // 
-            this.btnCadastrarSecao.Location = new System.Drawing.Point(74, 63);
+            this.btnCadastrarSecao.Location = new System.Drawing.Point(161, 65);
             this.btnCadastrarSecao.Name = "btnCadastrarSecao";
             this.btnCadastrarSecao.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrarSecao.TabIndex = 5;
             this.btnCadastrarSecao.Text = "Cadastrar";
             this.btnCadastrarSecao.UseVisualStyleBackColor = true;
             this.btnCadastrarSecao.Click += new System.EventHandler(this.btnCadastrarSecao_Click);
-            // 
-            // btnFilmes
-            // 
-            this.btnFilmes.Location = new System.Drawing.Point(250, 63);
-            this.btnFilmes.Name = "btnFilmes";
-            this.btnFilmes.Size = new System.Drawing.Size(75, 23);
-            this.btnFilmes.TabIndex = 7;
-            this.btnFilmes.Text = "Buscar";
-            this.btnFilmes.UseVisualStyleBackColor = true;
-            this.btnFilmes.Click += new System.EventHandler(this.button2_Click);
             // 
             // boxFilmes
             // 
@@ -159,7 +148,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel1.Controls.Add(this.boxFilmes);
-            this.panel1.Controls.Add(this.btnFilmes);
             this.panel1.Controls.Add(this.btnCadastrarSecao);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -202,7 +190,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCadastrarSecao;
-        private System.Windows.Forms.Button btnFilmes;
         private System.Windows.Forms.ComboBox boxFilmes;
         private System.Windows.Forms.Panel panel1;
     }

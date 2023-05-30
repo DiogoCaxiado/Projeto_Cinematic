@@ -18,7 +18,6 @@ namespace Projeto_Cinematic
             InitializeComponent();
         }
 
-        int idSessao;
         string escolha;
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -107,30 +106,37 @@ namespace Projeto_Cinematic
 
         private void btnCadastrarSecao_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            if (txtSalas.TextLength != 0 && boxFilmes.Text.Length != 0)
             {
-                //criando o objeto de conexão com banco de dados
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
-
-                //criando o objeto de comando de SQL para enviar instruções para o banco de dados
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection; //ligando o comando a conexão que configurada acima
-                cmd.CommandText = "piSessao_Di";
-                cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
-
-                //vincular os campos do formulários aos parâmetros do procedimento
-                cmd.Parameters.AddWithValue("sala", txtSalas.Text);
-                cmd.Parameters.AddWithValue("nomeFilme", boxFilmes.Text);
-
-                connection.Open();
-                    if (boxFilmes.SelectedIndex != -1)
+                timer1.Start();
                 {
-                    escolha = boxFilmes.SelectedItem.ToString();
+                    //criando o objeto de conexão com banco de dados
+                    SqlConnection connection = new SqlConnection();
+                    connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
+
+                    //criando o objeto de comando de SQL para enviar instruções para o banco de dados
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection; //ligando o comando a conexão que configurada acima
+                    cmd.CommandText = "piSessao_Di";
+                    cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
+
+                    //vincular os campos do formulários aos parâmetros do procedimento
+                    cmd.Parameters.AddWithValue("sala", txtSalas.Text);
+                    cmd.Parameters.AddWithValue("nomeFilme", boxFilmes.Text);
+
+                    connection.Open();
+                    if (boxFilmes.SelectedIndex != -1)
+                    {
+                        escolha = boxFilmes.SelectedItem.ToString();
+                    }
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    connection.Close();
                 }
-                SqlDataReader reader = cmd.ExecuteReader();
-                   
-                connection.Close();
+            }
+            else
+            {
+                MessageBox.Show("Verifique se preencheu os campos corretamente.");
             }
         }
 

@@ -46,74 +46,86 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Yellow;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAcesso,
             this.menuIngresso,
-            this.menuFuncionario,
             this.menuFilmes,
+            this.menuFuncionario,
             this.menuSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Margin = new System.Windows.Forms.Padding(5);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(760, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(760, 43);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menuAcesso
             // 
-            this.menuAcesso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAcesso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.menuAcesso.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAcesso.Margin = new System.Windows.Forms.Padding(5);
             this.menuAcesso.Name = "menuAcesso";
-            this.menuAcesso.Size = new System.Drawing.Size(70, 25);
+            this.menuAcesso.Size = new System.Drawing.Size(82, 29);
             this.menuAcesso.Text = "Acesso";
             this.menuAcesso.Click += new System.EventHandler(this.menuAcesso_Click);
             // 
             // menuIngresso
             // 
-            this.menuIngresso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuIngresso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.menuIngresso.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuIngresso.Margin = new System.Windows.Forms.Padding(5);
             this.menuIngresso.Name = "menuIngresso";
-            this.menuIngresso.Size = new System.Drawing.Size(81, 25);
+            this.menuIngresso.Size = new System.Drawing.Size(95, 29);
             this.menuIngresso.Text = "Ingresso";
             this.menuIngresso.Visible = false;
             this.menuIngresso.Click += new System.EventHandler(this.menuIngresso_Click);
             // 
             // menuFuncionario
             // 
-            this.menuFuncionario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.menuFuncionario.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuFuncionario.Margin = new System.Windows.Forms.Padding(5);
             this.menuFuncionario.Name = "menuFuncionario";
-            this.menuFuncionario.Size = new System.Drawing.Size(104, 25);
+            this.menuFuncionario.Size = new System.Drawing.Size(124, 29);
             this.menuFuncionario.Text = "Funcionário";
             this.menuFuncionario.Visible = false;
             this.menuFuncionario.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
             // menuFilmes
             // 
+            this.menuFilmes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.menuFilmes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuSecao,
             this.menuCadastrarFilmes});
-            this.menuFilmes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuFilmes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuFilmes.Margin = new System.Windows.Forms.Padding(5);
             this.menuFilmes.Name = "menuFilmes";
-            this.menuFilmes.Size = new System.Drawing.Size(67, 25);
+            this.menuFilmes.Size = new System.Drawing.Size(77, 29);
             this.menuFilmes.Text = "Filmes";
             this.menuFilmes.Visible = false;
             // 
             // menuSecao
             // 
             this.menuSecao.Name = "menuSecao";
-            this.menuSecao.Size = new System.Drawing.Size(206, 26);
+            this.menuSecao.Size = new System.Drawing.Size(234, 30);
             this.menuSecao.Text = "Sessão dos Filmes";
             this.menuSecao.Click += new System.EventHandler(this.menuSecao_Click);
             // 
             // menuCadastrarFilmes
             // 
             this.menuCadastrarFilmes.Name = "menuCadastrarFilmes";
-            this.menuCadastrarFilmes.Size = new System.Drawing.Size(206, 26);
+            this.menuCadastrarFilmes.Size = new System.Drawing.Size(234, 30);
             this.menuCadastrarFilmes.Text = "Filmes";
             this.menuCadastrarFilmes.Click += new System.EventHandler(this.menuCadastrarFilmes_Click);
             // 
             // menuSair
             // 
-            this.menuSair.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.menuSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.menuSair.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuSair.Margin = new System.Windows.Forms.Padding(5);
             this.menuSair.Name = "menuSair";
-            this.menuSair.Size = new System.Drawing.Size(49, 25);
+            this.menuSair.Size = new System.Drawing.Size(56, 29);
             this.menuSair.Text = "Sair";
             this.menuSair.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
             // 

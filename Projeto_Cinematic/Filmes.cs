@@ -22,49 +22,7 @@ namespace Projeto_Cinematic
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            //criando o objeto de conexão com banco de dados
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
-
-            //criando o objeto de comando de SQL para enviar instruções para o banco de dados
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = connection; //ligando o comando a conexão que configurada acima
-            cmd.CommandText = "piFilme_Di";
-            cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
-
-            string exibicao;
-
-            if (rad2D.Checked == true)
-            {
-                exibicao = "2D";
-            }
-            else
-            {
-                exibicao = "3D";
-            }
-            //vincular os campos do formulários aos parâmetros do procedimento
-            cmd.Parameters.AddWithValue("nome", txtNome.Text);
-            cmd.Parameters.AddWithValue("genero", txtGenero.Text);
-            cmd.Parameters.AddWithValue("duracao", txtDuracao.Text);
-            cmd.Parameters.AddWithValue("idioma", txtIdioma.Text);
-            cmd.Parameters.AddWithValue("anoLancamento", txtAnoLancamento.Text);
-            cmd.Parameters.AddWithValue("sinopse", txtSinopse.Text);
-            cmd.Parameters.AddWithValue("faixaEtaria", txtFaixaEtaria.Text);
-            cmd.Parameters.AddWithValue("exibicao", exibicao);
-
-            connection.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-                
-            connection.Close();
-
-            MessageBox.Show("Filme cadastrado com sucesso.");
-        }
-
-        private void btnAtualizar_Click_1(object sender, EventArgs e)
-        {
-            DialogResult dialog = MessageBox.Show("Deseja realmente atualizar?", "Aviso", MessageBoxButtons.YesNo);
-
-            if (dialog == DialogResult.Yes)
+            if (txtNome.TextLength != 0 && txtGenero.TextLength != 0 && txtDuracao.TextLength != 0 && txtIdioma.TextLength != 0 && txtAnoLancamento.TextLength != 0 && txtSinopse.TextLength != 0 && txtFaixaEtaria.TextLength != 0 && rad2D.Checked || rad3D.Checked)
             {
                 //criando o objeto de conexão com banco de dados
                 SqlConnection connection = new SqlConnection();
@@ -73,9 +31,8 @@ namespace Projeto_Cinematic
                 //criando o objeto de comando de SQL para enviar instruções para o banco de dados
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = connection; //ligando o comando a conexão que configurada acima
-                cmd.CommandText = "puFilme_Di";
+                cmd.CommandText = "piFilme_Di";
                 cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
-                cmd.Parameters.AddWithValue("idFilme", idFilme);
 
                 string exibicao;
 
@@ -87,22 +44,80 @@ namespace Projeto_Cinematic
                 {
                     exibicao = "3D";
                 }
-
                 //vincular os campos do formulários aos parâmetros do procedimento
                 cmd.Parameters.AddWithValue("nome", txtNome.Text);
-                cmd.Parameters.AddWithValue("faixaEtaria", txtFaixaEtaria.Text);
                 cmd.Parameters.AddWithValue("genero", txtGenero.Text);
-                cmd.Parameters.AddWithValue("idioma", txtIdioma.Text);
                 cmd.Parameters.AddWithValue("duracao", txtDuracao.Text);
-                cmd.Parameters.AddWithValue("exibicao", exibicao);
+                cmd.Parameters.AddWithValue("idioma", txtIdioma.Text);
                 cmd.Parameters.AddWithValue("anoLancamento", txtAnoLancamento.Text);
                 cmd.Parameters.AddWithValue("sinopse", txtSinopse.Text);
+                cmd.Parameters.AddWithValue("faixaEtaria", txtFaixaEtaria.Text);
+                cmd.Parameters.AddWithValue("exibicao", exibicao);
 
                 connection.Open();
-                cmd.ExecuteNonQuery(); //executar para comandos que não possuem retorno de dados (INSERT, UPDATE e DELETE)
+                SqlDataReader reader = cmd.ExecuteReader();
+
                 connection.Close();
 
-                MessageBox.Show("Filme atualizado com sucesso.");
+                MessageBox.Show("Filme cadastrado com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Verifique os campos preenchidos.");
+            }
+        }
+
+
+        private void btnAtualizar_Click_1(object sender, EventArgs e)
+        {
+            if (txtNome.TextLength != 0 && txtGenero.TextLength != 0 && txtDuracao.TextLength != 0 && txtIdioma.TextLength != 0 && txtAnoLancamento.TextLength != 0 && txtSinopse.TextLength != 0 && txtFaixaEtaria.TextLength != 0 && rad2D.Checked || rad3D.Checked)
+            {
+                DialogResult dialog = MessageBox.Show("Deseja realmente atualizar?", "Aviso", MessageBoxButtons.YesNo);
+
+                if (dialog == DialogResult.Yes)
+                {
+                    //criando o objeto de conexão com banco de dados
+                    SqlConnection connection = new SqlConnection();
+                    connection.ConnectionString = "Server=turmassenacsantos.mssql.somee.com;Database=turmassenacsantos;User Id=senacclovis_SQLLogin_1;Password=n1642mlxmm;";
+
+                    //criando o objeto de comando de SQL para enviar instruções para o banco de dados
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection; //ligando o comando a conexão que configurada acima
+                    cmd.CommandText = "puFilme_Di";
+                    cmd.CommandType = CommandType.StoredProcedure; //definindo que o comando é um procedimento
+                    cmd.Parameters.AddWithValue("idFilme", idFilme);
+
+                    string exibicao;
+
+                    if (rad2D.Checked == true)
+                    {
+                        exibicao = "2D";
+                    }
+                    else
+                    {
+                        exibicao = "3D";
+                    }
+
+                    //vincular os campos do formulários aos parâmetros do procedimento
+                    cmd.Parameters.AddWithValue("nome", txtNome.Text);
+                    cmd.Parameters.AddWithValue("faixaEtaria", txtFaixaEtaria.Text);
+                    cmd.Parameters.AddWithValue("genero", txtGenero.Text);
+                    cmd.Parameters.AddWithValue("idioma", txtIdioma.Text);
+                    cmd.Parameters.AddWithValue("duracao", txtDuracao.Text);
+                    cmd.Parameters.AddWithValue("exibicao", exibicao);
+                    cmd.Parameters.AddWithValue("anoLancamento", txtAnoLancamento.Text);
+                    cmd.Parameters.AddWithValue("sinopse", txtSinopse.Text);
+
+                    connection.Open();
+                    cmd.ExecuteNonQuery(); //executar para comandos que não possuem retorno de dados (INSERT, UPDATE e DELETE)
+                    connection.Close();
+
+                    MessageBox.Show("Filme atualizado com sucesso.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Verifique os campos preenchidos");
             }
         }
 
@@ -227,6 +242,11 @@ namespace Projeto_Cinematic
 
                 MessageBox.Show("Filme excluído com sucesso.");
             }
+        }
+
+        private void boxNome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,13 +47,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnBuscarF = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFecharX2 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnAtualizar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -247,6 +247,16 @@
             this.btnBuscarF.UseVisualStyleBackColor = true;
             this.btnBuscarF.Click += new System.EventHandler(this.btnBuscarF_Click);
             // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Location = new System.Drawing.Point(145, 226);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizar.TabIndex = 14;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.button2_Click);
+            // 
             // btnCadastrar
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(316, 226);
@@ -302,16 +312,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Location = new System.Drawing.Point(145, 226);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizar.TabIndex = 14;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.button2_Click);
             // 
             // Funcionario
             // 
